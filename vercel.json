@@ -1,5 +1,5 @@
 {
   "buildCommand": "npm install && npx run build",
   "outputDirectory": "dist",
-  "framework": "null"
+  "framework": "vite"
 }
