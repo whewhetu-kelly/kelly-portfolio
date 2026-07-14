@@ -17,13 +17,27 @@ export default function Contact() {
   const [formState, setFormState] = useState({ name: '', email: '', message: '' })
   const [submitted, setSubmitted] = useState(false)
 
-  const handleSubmit = (e) => {
+  const [error, setError] = useState(false)
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setSubmitted(true)
-    setTimeout(() => {
-      setSubmitted(false)
-      setFormState({ name: '', email: '', message: '' })
-    }, 3000)
+    setError(false)
+    try {
+      const res = await fetch('https://formspree.io/f/xgogvzqk', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: JSON.stringify(formState)
+      })
+      if (res.ok) {
+        setSubmitted(true)
+        setFormState({ name: '', email: '', message: '' })
+        setTimeout(() => setSubmitted(false), 3000)
+      } else {
+        setError(true)
+      }
+    } catch {
+      setError(true)
+    }
   }
 
   return (
@@ -159,10 +173,6 @@ export default function Contact() {
                     'Send Message'
                   )}
                 </button>
-
-                <p className="text-xs text-center text-slate-500 dark:text-slate-500">
-                  This is a static demo. In production, connect to a form service like Formspree or Netlify Forms.
-                </p>
               </form>
             </motion.div>
           </div>

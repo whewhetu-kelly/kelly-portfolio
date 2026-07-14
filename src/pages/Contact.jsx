@@ -17,13 +17,27 @@ export default function ContactPage() {
   const [formState, setFormState] = useState({ name: '', email: '', subject: '', message: '' })
   const [submitted, setSubmitted] = useState(false)
 
-  const handleSubmit = (e) => {
+  const [error, setError] = useState(false)
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setSubmitted(true)
-    setTimeout(() => {
-      setSubmitted(false)
-      setFormState({ name: '', email: '', subject: '', message: '' })
-    }, 3000)
+    setError(false)
+    try {
+      const res = await fetch('https://formspree.io/f/xgogvzqk', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: JSON.stringify(formState)
+      })
+      if (res.ok) {
+        setSubmitted(true)
+        setFormState({ name: '', email: '', subject: '', message: '' })
+        setTimeout(() => setSubmitted(false), 3000)
+      } else {
+        setError(true)
+      }
+    } catch {
+      setError(true)
+    }
   }
 
   return (
@@ -199,11 +213,11 @@ export default function ContactPage() {
                   'Send Message'
                 )}
               </button>
-
-              <p className="text-xs text-center text-slate-500 dark:text-slate-500">
-                This is a static demo. In production, connect to a form service like Formspree, 
-                Netlify Forms, or EmailJS for actual message delivery.
-              </p>
+{error && (
+                <p className="text-xs text-center text-red-500">
+                  Something went wrong. Please try again or email me directly.
+                </p>
+              )}
             </form>
           </div>
         </div>
