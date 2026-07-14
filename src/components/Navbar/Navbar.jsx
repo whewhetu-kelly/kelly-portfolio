@@ -38,20 +38,20 @@ export default function Navbar() {
           : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <div className="flex items-center justify-center w-10 h-10 transition-transform rounded-xl bg-gradient-to-br from-primary-500 to-secondary-500 group-hover:scale-110">
               <BsCodeSquare className="w-5 h-5 text-white" />
             </div>
-            <span className="font-display font-bold text-xl tracking-tight">
-              <span className="text-slate-900 dark:text-white">Dev</span>
-              <span className="text-primary-500">Portfolio</span>
+            <span className="text-xl font-bold tracking-tight font-display">
+              <span className="text-slate-900 dark:text-white">Code</span>
+              <span className="text-primary-500">ByKelly</span>
             </span>
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-1">
+          <div className="items-center hidden gap-1 md:flex">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -65,7 +65,7 @@ export default function Navbar() {
                 {location.pathname === link.path && (
                   <motion.div
                     layoutId="navbar-active"
-                    className="absolute inset-0 bg-primary-500/10 dark:bg-primary-500/20 rounded-lg"
+                    className="absolute inset-0 rounded-lg bg-primary-500/10 dark:bg-primary-500/20"
                     transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
                   />
                 )}
@@ -83,7 +83,7 @@ export default function Navbar() {
           {/* Mobile Toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+            className="p-2 transition-colors rounded-lg md:hidden text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800"
           >
             {isOpen ? <HiX className="w-6 h-6" /> : <HiMenu className="w-6 h-6" />}
           </button>
@@ -98,7 +98,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-white/95 dark:bg-dark/95 backdrop-blur-xl border-t border-slate-200 dark:border-slate-800"
+            className="border-t md:hidden bg-white/95 dark:bg-dark/95 backdrop-blur-xl border-slate-200 dark:border-slate-800"
           >
             <div className="px-4 py-4 space-y-1">
               {navLinks.map((link) => (
@@ -116,7 +116,7 @@ export default function Navbar() {
               ))}
               <Link
                 to="/contact"
-                className="block mt-4 px-4 py-3 rounded-xl bg-gradient-to-r from-primary-500 to-secondary-500 text-white text-center text-sm font-semibold"
+                className="block px-4 py-3 mt-4 text-sm font-semibold text-center text-white rounded-xl bg-gradient-to-r from-primary-500 to-secondary-500"
               >
                 Hire Me
               </Link>

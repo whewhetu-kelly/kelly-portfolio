@@ -8,9 +8,29 @@ import {
   BsTools, BsArrowRepeat, BsLightbulb, BsArrowRight, BsCheckCircle
 } from 'react-icons/bs'
 
+import webDevImg from '../assets/images/services/web-development.svg'
+import customAppImg from '../assets/images/services/custom-app.svg'
+import phpMysqlImg from '../assets/images/services/php-mysql.svg'
+import aiSolutionsImg from '../assets/images/services/ai-solutions.svg'
+import cybersecurityImg from '../assets/images/services/cybersecurity.svg'
+import maintenanceImg from '../assets/images/services/maintenance.svg'
+import modernizationImg from '../assets/images/services/modernization.svg'
+import consultingImg from '../assets/images/services/consulting.svg'
+
 const iconMap = {
   BsGlobe, BsCodeSquare, BsDatabase, BsRobot, BsShieldCheck,
   BsTools, BsArrowRepeat, BsLightbulb
+}
+
+const imageMap = {
+  'business-websites': webDevImg,
+  'web-applications': customAppImg,
+  'php-mysql': phpMysqlImg,
+  'ai-solutions': aiSolutionsImg,
+  'cybersecurity': cybersecurityImg,
+  'maintenance': maintenanceImg,
+  'modernization': modernizationImg,
+  'consulting': consultingImg
 }
 
 const serviceDetails = {
@@ -57,15 +77,15 @@ export default function ServicesPage() {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.4 }}
-      className="pt-24 pb-16 min-h-screen"
+      className="min-h-screen pt-24 pb-16"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="max-w-3xl mx-auto mb-16 text-center">
           <span className="inline-block px-4 py-1.5 rounded-full bg-secondary-500/10 text-secondary-500 text-sm font-medium mb-4">
             Services
           </span>
-          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
+          <h1 className="mb-6 text-3xl font-bold font-display sm:text-4xl md:text-5xl text-slate-900 dark:text-white">
             Premium Services for
             <span className="gradient-text"> Your Business</span>
           </h1>
@@ -97,17 +117,17 @@ export default function ServicesPage() {
                   <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-6`}>
                     <IconComponent className="w-8 h-8 text-white" />
                   </div>
-                  <h2 className="font-display text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4">
+                  <h2 className="mb-4 text-2xl font-bold font-display md:text-3xl text-slate-900 dark:text-white">
                     {service.title}
                   </h2>
-                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                  <p className="mb-6 leading-relaxed text-slate-600 dark:text-slate-400">
                     {service.description}
                   </p>
 
                   {details && (
-                    <div className="grid sm:grid-cols-2 gap-4">
+                    <div className="grid gap-4 sm:grid-cols-2">
                       <div>
-                        <h4 className="font-semibold text-slate-900 dark:text-white mb-3 text-sm uppercase tracking-wider">
+                        <h4 className="mb-3 text-sm font-semibold tracking-wider uppercase text-slate-900 dark:text-white">
                           Key Features
                         </h4>
                         <ul className="space-y-2">
@@ -120,13 +140,13 @@ export default function ServicesPage() {
                         </ul>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-slate-900 dark:text-white mb-3 text-sm uppercase tracking-wider">
+                        <h4 className="mb-3 text-sm font-semibold tracking-wider uppercase text-slate-900 dark:text-white">
                           Process
                         </h4>
                         <ul className="space-y-2">
                           {details.process.map((step, i) => (
                             <li key={step} className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
-                              <span className="w-5 h-5 rounded-full bg-primary-500/10 text-primary-500 flex items-center justify-center text-xs font-bold shrink-0">
+                              <span className="flex items-center justify-center w-5 h-5 text-xs font-bold rounded-full bg-primary-500/10 text-primary-500 shrink-0">
                                 {i + 1}
                               </span>
                               {step}
@@ -139,7 +159,7 @@ export default function ServicesPage() {
 
                   <Link
                     to="/contact"
-                    className="inline-flex items-center gap-2 mt-6 px-6 py-3 rounded-xl bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold hover:shadow-lg hover:shadow-primary-500/25 transition-all hover:scale-105"
+                    className="inline-flex items-center gap-2 px-6 py-3 mt-6 font-semibold text-white transition-all rounded-xl bg-gradient-to-r from-primary-500 to-secondary-500 hover:shadow-lg hover:shadow-primary-500/25 hover:scale-105"
                   >
                     Get Started
                     <BsArrowRight className="w-4 h-4" />
@@ -147,12 +167,16 @@ export default function ServicesPage() {
                 </div>
 
                 <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
-                  <div className={`glass rounded-3xl p-8 bg-gradient-to-br ${service.color} bg-opacity-5`}>
-                    <div className="aspect-video rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
-                      <IconComponent className="w-24 h-24 text-slate-300 dark:text-slate-700" />
-                    </div>
-                  </div>
-                </div>
+  <div className={`glass rounded-3xl p-8 bg-gradient-to-br ${service.color} bg-opacity-5`}>
+    <div className="flex items-center justify-center p-6 aspect-video rounded-2xl bg-slate-100 dark:bg-slate-800">
+      <img
+        src={imageMap[service.id]}
+        alt={service.title}
+        className="object-contain max-w-full max-h-full"
+      />
+    </div>
+  </div>
+</div>
               </motion.div>
             )
           })}
@@ -163,18 +187,18 @@ export default function ServicesPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="mt-20 glass rounded-3xl p-8 md:p-12 text-center bg-gradient-to-br from-primary-500/5 to-secondary-500/5"
+          className="p-8 mt-20 text-center glass rounded-3xl md:p-12 bg-gradient-to-br from-primary-500/5 to-secondary-500/5"
         >
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4">
+          <h2 className="mb-4 text-2xl font-bold font-display md:text-3xl text-slate-900 dark:text-white">
             Need a Custom Solution?
           </h2>
-          <p className="text-slate-600 dark:text-slate-400 mb-6 max-w-xl mx-auto">
+          <p className="max-w-xl mx-auto mb-6 text-slate-600 dark:text-slate-400">
             Every business is unique. Let's discuss your specific requirements 
             and build a solution that fits perfectly.
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold hover:shadow-lg hover:shadow-primary-500/25 transition-all hover:scale-105"
+            className="inline-flex items-center gap-2 px-8 py-4 font-semibold text-white transition-all rounded-2xl bg-gradient-to-r from-primary-500 to-secondary-500 hover:shadow-lg hover:shadow-primary-500/25 hover:scale-105"
           >
             Start a Conversation
             <BsArrowRight className="w-5 h-5" />

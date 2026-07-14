@@ -12,13 +12,18 @@ import ProjectDetails from './pages/ProjectDetails'
 import Services from './pages/Services'
 import About from './pages/About'
 import Contact from './pages/Contact'
+import { useEffect } from 'react'
 import NotFound from './pages/NotFound'
 
 function App() {
   const location = useLocation()
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [location.pathname])
+  
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-dark text-slate-900 dark:text-slate-100 transition-colors duration-300">
+    <div className="min-h-screen transition-colors duration-300 bg-slate-50 dark:bg-dark text-slate-900 dark:text-slate-100">
       <CursorEffects />
       <ScrollProgress />
       <Navbar />
