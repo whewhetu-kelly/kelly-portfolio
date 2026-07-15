@@ -8,6 +8,7 @@ import {
   BsArrowRight, BsCode, BsGlobe, BsTrophy, BsPeople, BsClock
 } from 'react-icons/bs'
 import { FaGraduationCap } from 'react-icons/fa'
+import profileImg from '../assets/images/profile.jpg'
 const stats = [
   { icon: BsCode, value: '50+', label: 'Projects Completed' },
   { icon: BsGlobe, value: '30+', label: 'Happy Clients' },
@@ -48,6 +49,24 @@ export default function AboutPage() {
             premium software solutions. I specialize in creating modern web applications that 
             combine beautiful design with robust functionality.
           </p>
+        </div>
+
+       {/* Profile Photo */}
+        <div className="flex justify-center mb-16">
+          <div className="relative">
+            <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-primary-500 to-secondary-500 opacity-20 blur-2xl" />
+            <div className="relative w-64 p-1 sm:w-72 rounded-3xl bg-gradient-to-br from-primary-500 to-secondary-500">
+              <img
+                src={profileImg}
+                alt="Kelly - Full-Stack Web Developer"
+                className="w-full rounded-[1.4rem] object-cover aspect-[4/5]"
+              />
+            </div>
+            <div className="absolute px-4 py-3 shadow-lg -bottom-4 -right-4 glass rounded-2xl">
+              <div className="text-xl font-bold font-display text-primary-500">5+</div>
+              <div className="text-xs text-slate-600 dark:text-slate-400">Years Experience</div>
+            </div>
+          </div>
         </div>
 
         {/* Stats */}

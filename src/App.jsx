@@ -19,7 +19,14 @@ function App() {
   const location = useLocation()
 
   useEffect(() => {
-    window.scrollTo(0, 0)
+    const resetScroll = () => {
+      window.scrollTo(0, 0)
+      document.documentElement.scrollTop = 0
+      document.body.scrollTop = 0
+    }
+    resetScroll()
+    const timeout = setTimeout(resetScroll, 100)
+    return () => clearTimeout(timeout)
   }, [location.pathname])
   
   return (
