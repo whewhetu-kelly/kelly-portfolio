@@ -4,7 +4,7 @@ import { projects } from '../data/projects'
 import ProjectCard from '../components/ProjectCard/ProjectCard'
 import { BsSearch, BsGrid, BsList } from 'react-icons/bs'
 
-const categories = ['All', 'AI & Machine Learning', 'Cybersecurity', 'Web Application', 'Data Visualization', 'E-Commerce', 'Healthcare']
+const categories = ['All', 'Artificial Intelligence', 'Cybersecurity', 'Web Application', 'Business', 'Education', 'Healthcare']
 
 export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState('All')
@@ -25,15 +25,15 @@ export default function Projects() {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.4 }}
-      className="pt-24 pb-16 min-h-screen"
+      className="min-h-screen pt-24 pb-16"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="max-w-3xl mx-auto mb-12 text-center">
           <span className="inline-block px-4 py-1.5 rounded-full bg-primary-500/10 text-primary-500 text-sm font-medium mb-4">
             Portfolio
           </span>
-          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
+          <h1 className="mb-6 text-3xl font-bold font-display sm:text-4xl md:text-5xl text-slate-900 dark:text-white">
             All
             <span className="gradient-text"> Projects</span>
           </h1>
@@ -43,10 +43,10 @@ export default function Projects() {
         </div>
 
         {/* Filters */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8">
+        <div className="flex flex-col items-center justify-between gap-4 mb-8 sm:flex-row">
           {/* Search */}
           <div className="relative w-full sm:w-80">
-            <BsSearch className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+            <BsSearch className="absolute w-4 h-4 -translate-y-1/2 left-3 top-1/2 text-slate-400" />
             <input
               type="text"
               value={searchQuery}
@@ -99,7 +99,7 @@ export default function Projects() {
         </div>
 
         {/* Results Count */}
-        <p className="text-sm text-slate-500 dark:text-slate-500 mb-6">
+        <p className="mb-6 text-sm text-slate-500 dark:text-slate-500">
           Showing {filteredProjects.length} project{filteredProjects.length !== 1 ? 's' : ''}
         </p>
 
@@ -111,7 +111,7 @@ export default function Projects() {
         </div>
 
         {filteredProjects.length === 0 && (
-          <div className="text-center py-16">
+          <div className="py-16 text-center">
             <p className="text-lg text-slate-500 dark:text-slate-500">
               No projects found matching your criteria.
             </p>
