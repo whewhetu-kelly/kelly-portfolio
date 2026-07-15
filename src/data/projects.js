@@ -214,6 +214,44 @@ export const projects = [
     '/projects/journal management screenshots/submit manuscript.jpg'
   ]
 },
+
+{
+  id: 'payroll-management-system',
+  title: 'Payroll Management System',
+  shortDescription: 'A professional payroll management system for employee records, salary processing, deductions, payroll reporting, and business administration.',
+  description: 'A complete payroll management system designed to simplify employee management, automate payroll calculations, process salary payments, manage deductions, and generate insightful payroll reports through a modern administrative dashboard.',
+  status: 'Completed',
+  category: 'Business Management System',
+  image: '/projects/payroll management system screenshots/dashboard.jpg',
+  technologies: ['PHP', 'MySQL', 'JavaScript', 'Bootstrap 5', 'Chart.js'],
+  github: 'https://github.com/whewhetu-kelly/payroll-management-system',
+  features: [
+    'Employee management',
+    'Department management',
+    'Automated payroll processing',
+    'Salary deductions and tax calculation',
+    'Payroll reports and analytics',
+    'Company settings management'
+  ],
+  problem: 'Organizations often rely on manual payroll processing, making salary calculations, deductions, employee management, and reporting time-consuming and prone to errors.',
+  solution: 'Developed a payroll management system that automates salary computation, deduction management, payroll generation, employee administration, and reporting, significantly reducing payroll processing time.',
+  architecture: 'Frontend developed with HTML5, CSS3, Bootstrap 5, and JavaScript. Backend built using PHP with MySQL for secure data management. Chart.js provides interactive payroll analytics and reporting dashboards.',
+  challenges: 'Implementing flexible payroll calculations with configurable deductions while maintaining accurate salary records and responsive reporting required careful business logic and database design.',
+  screenshots: [
+    '/projects/payroll management system screenshots/login.jpg',
+    '/projects/payroll management system screenshots/dashboard.jpg',
+    '/projects/payroll management system screenshots/employees.jpg',
+    '/projects/payroll management system screenshots/department.jpg',
+    '/projects/payroll management system screenshots/payroll.jpg',
+    '/projects/payroll management system screenshots/reports.jpg',
+    '/projects/payroll management system screenshots/settings.jpg',
+    '/projects/payroll management system screenshots/responsiveness.jpg',
+    '/projects/payroll management system screenshots/add department.jpg',
+    '/projects/payroll management system screenshots/add employee.jpg',
+    '/projects/payroll management system screenshots/add payroll.jpg',
+  ]
+},
+
   {
   id: 'inventory-sales-management-system',
   title: 'Inventory & Sales Management System',
