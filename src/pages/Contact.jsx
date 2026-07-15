@@ -9,7 +9,7 @@ const contactLinks = [
   { icon: BsGithub, label: 'GitHub', value: '@whewhetu-kelly', href: 'https://github.com/whewhetu-kelly', color: 'from-slate-700 to-slate-900' },
   { icon: BsLinkedin, label: 'LinkedIn', value: 'kelly-whewhetu', href: 'https://www.linkedin.com/in/kelly-whewhetu-66a541329', color: 'from-blue-600 to-blue-800' },
   { icon: BsBriefcase, label: 'Upwork', value: 'Top Rated', href: 'https://www.upwork.com/freelancers/~01cc93a11f52fbc3c7', color: 'from-green-500 to-emerald-600' },
-  { icon: BsWhatsapp, label: 'WhatsApp', value: '+234 902 397 2454', href: 'https://wa.me/2349023972454', color: 'from-green-500 to-emerald-600' }
+  { icon: BsWhatsapp, label: 'WhatsApp', value: '+234 902 397 2454', href: 'https://wa.me/2349023972454?text=Hi%20Kelly%2C%20I%27d%20like%20to%20discuss%20a%20project', color: 'from-green-500 to-emerald-600' }
 
 ]
 
