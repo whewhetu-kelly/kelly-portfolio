@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 const socialLinks = [
   { icon: BsGithub, href: 'https://github.com/whewhetu-kelly', label: 'GitHub' },
-  { icon: BsLinkedin, href: 'https://linkedin.com/in/whewhetu-kelly', label: 'LinkedIn' },
+  { icon: BsLinkedin, href: 'https://www.linkedin.com/in/kelly-whewhetu-66a541329', label: 'LinkedIn' },
   { icon: BsTwitter, href: 'https://twitter.com/@kelly_sharpman', label: 'Twitter' },
   { icon: BsEnvelope, href: 'mailto:whewhetukelly70@email.com', label: 'Work Email' },
 ]

@@ -6,8 +6,8 @@ import { BsBriefcase } from 'react-icons/bs'
 
 const contactLinks = [
   { icon: BsEnvelope, label: 'Email', value: 'whewhetukelly70@gmail.com', href: 'mailto:whewhetukelly70@gmail.com', color: 'from-red-500 to-pink-500' },
-  { icon: BsGithub, label: 'GitHub', value: '@whewhetu-kelly', href: 'https://github.com', color: 'from-slate-700 to-slate-900' },
-  { icon: BsLinkedin, label: 'LinkedIn', value: 'kelly-whewhetu', href: 'https://linkedin.com', color: 'from-blue-600 to-blue-800' },
+  { icon: BsGithub, label: 'GitHub', value: '@whewhetu-kelly', href: 'https://github.com/whewhetu-kelly', color: 'from-slate-700 to-slate-900' },
+  { icon: BsLinkedin, label: 'LinkedIn', value: 'kelly-whewhetu', href: 'https://www.linkedin.com/in/kelly-whewhetu-66a541329', color: 'from-blue-600 to-blue-800' },
   { icon: BsBriefcase, label: 'Upwork', value: 'Top Rated', href: 'https://upwork.com', color: 'from-green-500 to-emerald-600' },
   { icon: BsWhatsapp, label: 'WhatsApp', value: '+234 902 972 454', href: 'https://wa.me/234902972454', color: 'from-green-500 to-emerald-600' }
 
