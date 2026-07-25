@@ -4,7 +4,7 @@ import { projects } from '../data/projects'
 import ProjectCard from '../components/ProjectCard/ProjectCard'
 import { BsSearch, BsGrid, BsList } from 'react-icons/bs'
 
-const categories = ['All', 'Artificial Intelligence', 'Cybersecurity', 'Web Application', 'Business', 'Education', 'Healthcare']
+const categories = ['All', 'Artificial Intelligence', 'Cybersecurity', 'Web Application', 'Business', 'Education', 'Election Management']
 
 export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState('All')
