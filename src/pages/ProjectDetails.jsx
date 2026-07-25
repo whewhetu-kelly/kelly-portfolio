@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { getProjectById } from '../data/projects'
 import ProjectGallery from '../components/ProjectGallery/ProjectGallery'
-import { BsGithub, BsArrowLeft, BsCheckCircle, BsLightbulb, BsExclamationTriangle, BsDiagram3, BsListCheck, BsLayers } from 'react-icons/bs'
+import { BsGithub, BsArrowLeft, BsCheckCircle, BsLightbulb, BsExclamationTriangle, BsDiagram3, BsListCheck, BsLayers, BsBoxArrowUpRight } from 'react-icons/bs'
 
 export default function ProjectDetails() {
   const { id } = useParams()
@@ -17,9 +17,9 @@ export default function ProjectDetails() {
 
   if (!project) {
     return (
-      <div className="pt-24 pb-16 min-h-screen flex items-center justify-center">
+      <div className="flex items-center justify-center min-h-screen pt-24 pb-16">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Project Not Found</h1>
+          <h1 className="mb-4 text-2xl font-bold text-slate-900 dark:text-white">Project Not Found</h1>
           <Link to="/projects" className="text-primary-500 hover:underline">
             Back to Projects
           </Link>
@@ -39,15 +39,15 @@ export default function ProjectDetails() {
   const tabContent = {
     overview: (
       <div className="space-y-6">
-        <p className="text-slate-700 dark:text-slate-300 leading-relaxed text-lg">{project.description}</p>
-        <div className="grid sm:grid-cols-2 gap-4">
-          <div className="glass rounded-xl p-4">
+        <p className="text-lg leading-relaxed text-slate-700 dark:text-slate-300">{project.description}</p>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div className="p-4 glass rounded-xl">
             <span className="text-sm text-slate-500 dark:text-slate-400">Category</span>
             <p className="font-semibold text-slate-900 dark:text-white">{project.category}</p>
           </div>
-          <div className="glass rounded-xl p-4">
+          <div className="p-4 glass rounded-xl">
             <span className="text-sm text-slate-500 dark:text-slate-400">Status</span>
-            <p className="font-semibold text-emerald-500 flex items-center gap-1">
+            <p className="flex items-center gap-1 font-semibold text-emerald-500">
               <BsCheckCircle className="w-4 h-4" />
               {project.status}
             </p>
@@ -57,45 +57,45 @@ export default function ProjectDetails() {
     ),
     problem: (
       <div className="space-y-6">
-        <div className="glass rounded-2xl p-6 border-l-4 border-red-500">
-          <h3 className="font-display text-lg font-bold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
+        <div className="p-6 border-l-4 border-red-500 glass rounded-2xl">
+          <h3 className="flex items-center gap-2 mb-3 text-lg font-bold font-display text-slate-900 dark:text-white">
             <BsExclamationTriangle className="w-5 h-5 text-red-500" />
             The Challenge
           </h3>
-          <p className="text-slate-700 dark:text-slate-300 leading-relaxed">{project.problem}</p>
+          <p className="leading-relaxed text-slate-700 dark:text-slate-300">{project.problem}</p>
         </div>
       </div>
     ),
     solution: (
       <div className="space-y-6">
-        <div className="glass rounded-2xl p-6 border-l-4 border-emerald-500">
-          <h3 className="font-display text-lg font-bold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
+        <div className="p-6 border-l-4 glass rounded-2xl border-emerald-500">
+          <h3 className="flex items-center gap-2 mb-3 text-lg font-bold font-display text-slate-900 dark:text-white">
             <BsLightbulb className="w-5 h-5 text-emerald-500" />
             The Solution
           </h3>
-          <p className="text-slate-700 dark:text-slate-300 leading-relaxed">{project.solution}</p>
+          <p className="leading-relaxed text-slate-700 dark:text-slate-300">{project.solution}</p>
         </div>
       </div>
     ),
     architecture: (
       <div className="space-y-6">
-        <div className="glass rounded-2xl p-6 border-l-4 border-primary-500">
-          <h3 className="font-display text-lg font-bold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
+        <div className="p-6 border-l-4 glass rounded-2xl border-primary-500">
+          <h3 className="flex items-center gap-2 mb-3 text-lg font-bold font-display text-slate-900 dark:text-white">
             <BsDiagram3 className="w-5 h-5 text-primary-500" />
             System Architecture
           </h3>
-          <p className="text-slate-700 dark:text-slate-300 leading-relaxed">{project.architecture}</p>
+          <p className="leading-relaxed text-slate-700 dark:text-slate-300">{project.architecture}</p>
         </div>
       </div>
     ),
     features: (
       <div className="space-y-6">
-        <div className="glass rounded-2xl p-6">
-          <h3 className="font-display text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+        <div className="p-6 glass rounded-2xl">
+          <h3 className="flex items-center gap-2 mb-4 text-lg font-bold font-display text-slate-900 dark:text-white">
             <BsListCheck className="w-5 h-5 text-primary-500" />
             Key Features
           </h3>
-          <div className="grid sm:grid-cols-2 gap-3">
+          <div className="grid gap-3 sm:grid-cols-2">
             {project.features.map((feature, index) => (
               <motion.div
                 key={index}
@@ -120,34 +120,34 @@ export default function ProjectDetails() {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.4 }}
-      className="pt-24 pb-16 min-h-screen"
+      className="min-h-screen pt-24 pb-16"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         {/* Back Button */}
         <button
           onClick={() => navigate(-1)}
-          className="flex items-center gap-2 text-slate-500 dark:text-slate-400 hover:text-primary-500 transition-colors mb-8"
+          className="flex items-center gap-2 mb-8 transition-colors text-slate-500 dark:text-slate-400 hover:text-primary-500"
         >
           <BsArrowLeft className="w-5 h-5" />
           Back to Projects
         </button>
 
         {/* Hero Image */}
-        <div className="relative rounded-3xl overflow-hidden mb-8">
+        <div className="relative mb-8 overflow-hidden rounded-3xl">
           <img
             src={project.image}
             alt={project.title}
-            className="w-full h-64 md:h-96 object-cover"
+            className="object-cover w-full h-64 md:h-96"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10">
-            <span className="inline-block px-3 py-1 rounded-full bg-primary-500/20 text-primary-400 text-xs font-medium border border-primary-500/30 mb-3">
+            <span className="inline-block px-3 py-1 mb-3 text-xs font-medium border rounded-full bg-primary-500/20 text-primary-400 border-primary-500/30">
               {project.category}
             </span>
-            <h1 className="font-display text-3xl md:text-5xl font-bold text-white mb-2">
+            <h1 className="mb-2 text-3xl font-bold text-white font-display md:text-5xl">
               {project.title}
             </h1>
-            <p className="text-slate-300 text-lg max-w-2xl">
+            <p className="max-w-2xl text-lg text-slate-300">
               {project.shortDescription}
             </p>
           </div>
@@ -171,15 +171,26 @@ export default function ProjectDetails() {
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold hover:scale-105 transition-transform"
+            className="flex items-center gap-2 px-6 py-3 font-semibold text-white transition-transform rounded-xl bg-slate-900 dark:bg-white dark:text-slate-900 hover:scale-105"
           >
             <BsGithub className="w-5 h-5" />
             View on GitHub
           </a>
+        {project.liveDemo && (
+            <a
+              href={project.liveDemo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-6 py-3 font-semibold text-white transition-transform rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 hover:scale-105"
+            >
+              <BsBoxArrowUpRight className="w-5 h-5" />
+              Live Demo
+            </a>
+          )}
         </div>
 
         {/* Tabs */}
-        <div className="flex flex-wrap gap-2 mb-8 border-b border-slate-200 dark:border-slate-800 pb-4">
+        <div className="flex flex-wrap gap-2 pb-4 mb-8 border-b border-slate-200 dark:border-slate-800">
           {tabs.map((tab) => (
             <button
               key={tab.id}
@@ -208,27 +219,27 @@ export default function ProjectDetails() {
         </motion.div>
 
         {/* Challenges */}
-        <div className="glass rounded-2xl p-6 mb-12 border-l-4 border-amber-500">
-          <h3 className="font-display text-lg font-bold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
+        <div className="p-6 mb-12 border-l-4 glass rounded-2xl border-amber-500">
+          <h3 className="flex items-center gap-2 mb-3 text-lg font-bold font-display text-slate-900 dark:text-white">
             <BsExclamationTriangle className="w-5 h-5 text-amber-500" />
             Challenges & Solutions
           </h3>
-          <p className="text-slate-700 dark:text-slate-300 leading-relaxed">{project.challenges}</p>
+          <p className="leading-relaxed text-slate-700 dark:text-slate-300">{project.challenges}</p>
         </div>
 
         {/* Screenshots */}
         <div className="mb-12">
-          <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-white mb-6">
+          <h3 className="mb-6 text-2xl font-bold font-display text-slate-900 dark:text-white">
             Project Screenshots
           </h3>
           <ProjectGallery screenshots={project.screenshots} />
         </div>
 
         {/* Next Project */}
-        <div className="flex justify-between items-center pt-8 border-t border-slate-200 dark:border-slate-800">
+        <div className="flex items-center justify-between pt-8 border-t border-slate-200 dark:border-slate-800">
           <Link
             to="/projects"
-            className="flex items-center gap-2 text-slate-500 dark:text-slate-400 hover:text-primary-500 transition-colors"
+            className="flex items-center gap-2 transition-colors text-slate-500 dark:text-slate-400 hover:text-primary-500"
           >
             <BsArrowLeft className="w-5 h-5" />
             All Projects
