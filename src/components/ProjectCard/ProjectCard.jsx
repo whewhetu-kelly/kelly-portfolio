@@ -54,12 +54,12 @@ export default function ProjectCard({ project, index }) {
           )}
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-stretch gap-2 flex-wrap">
           <a
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 text-sm font-medium transition-colors rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700"
+            className="flex items-center gap-2 px-4 py-2 text-sm font-medium transition-colors rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 whitespace-nowrap min-h-[42px]"
             onClick={(e) => e.stopPropagation()}
           >
             <BsGithub className="w-4 h-4" />
@@ -70,7 +70,7 @@ export default function ProjectCard({ project, index }) {
               href={project.liveDemo}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 text-sm font-medium transition-colors rounded-xl bg-emerald-500/10 text-emerald-500 hover:bg-emerald-500/20"
+              className="flex items-center gap-2 px-4 py-2 text-sm font-medium transition-colors rounded-xl bg-emerald-500/10 text-emerald-500 hover:bg-emerald-500/20 whitespace-nowrap min-h-[42px]"
               onClick={(e) => e.stopPropagation()}
             >
               <BsBoxArrowUpRight className="w-4 h-4" />
@@ -80,7 +80,7 @@ export default function ProjectCard({ project, index }) {
           
           <Link
             to={`/projects/${project.id}`}
-            className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white transition-all rounded-xl bg-gradient-to-r from-primary-500 to-secondary-500 hover:shadow-lg hover:shadow-primary-500/25"
+            className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white transition-all rounded-xl bg-gradient-to-r from-primary-500 to-secondary-500 hover:shadow-lg hover:shadow-primary-500/25 whitespace-nowrap min-h-[42px]"
           >
             Case Study
             <BsArrowRight className="w-4 h-4" />
