@@ -5,7 +5,7 @@ export const projects = [
   shortDescription: 'A biometric attendance management platform that uses fingerprint verification, role-based access, and real-time reporting to automate student attendance.',
   description: 'A production-ready biometric attendance management system developed for the Department of Computer Science and Information Technology, Petroleum Training Institute (PTI), Effurun. The platform replaces manual attendance with secure fingerprint verification, provides role-based administration, automated attendance reporting, audit logging, student self-service access, and a dedicated biometric engine for fingerprint matching.',
   status: 'Completed',
-  category: 'Biometric Attendance Management System',
+  category: 'Education',
   image: '/projects/fingerprint screenshots/login.jpg',
   technologies: [
     'PHP 8.2',
